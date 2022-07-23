@@ -10,15 +10,8 @@ const createGalleryItemMarkup = galleryItems.map(({preview, original, descriptio
 galleryList.insertAdjacentHTML('beforeend',
     createGalleryItemMarkup);
 
-galleryList.addEventListener('click', onGalleryImageClick);
-function onGalleryImageClick(event) {  
-    event.preventDefault();
-     if (!event.target.classList.contains('gallery__image')) {
-    return;
-     } 
-}
-    
-    let gallery = new SimpleLightbox(".gallery a", {
-captionsData: "alt",
-captionDelay: 250,
+new SimpleLightbox('.gallery a', {
+    captionsData: "alt",
+    captionDelay: 250,
+    captionPosition: "bottom",
 });
